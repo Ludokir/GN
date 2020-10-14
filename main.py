@@ -55,4 +55,4 @@ while run:
     screen.blit(font_box, font_rect)
     font_box.fill(SILVER)
     pygame.display.update()
-print('kkl')
+    
