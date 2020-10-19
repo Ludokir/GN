@@ -39,7 +39,18 @@ owl_rect = owl.get_rect(center=(210, 120))
 dialog = pygame.image.load('Image/dialog.png')
 dialog_rect = dialog.get_rect()
 dialog_cat_pos = (cat_rect.x, cat_rect.y - dialog_rect.h)
-dialog_dog_pos = (dog_rect.x, - dialog_rect.w // 2, dog_rect.y - dialog_rect.h)
+dialog_dog_pos = (dog_rect.x - dialog_rect.w // 2, dog_rect.y - dialog_rect.h)
+dialog_owl_pos = (owl_rect.x, owl_rect.y - dialog_rect.h)
+
+
+def dialog(text, pos, owl_text):
+    screen.blit(dialog, pos)
+    screen.blit(font2.render(text, True, BLACK), (pos[0] + 5, pos[1] + 5))
+    screen.blit(dialog, dialog_owl_pos)
+    screen.blit(font2.render(
+        owl_text, True, BLACK), (dialog_owl_pos[0] + 5, dialog_owl_pos[1] + 5))
+    pygame.display.update()
+    pygame.time.wait(2000)
 
 
 run = True
@@ -47,6 +58,13 @@ while run:
     for e in pygame.event.get():
         if e.type == pygame.QUIT:
             run = False
+        elif e.type == pygame.KEYDOWN:
+            if e.key == pygame.K_ESCAPE:
+                run = False
+            elif e.unicode.isdecimal() and block == 0:
+                numeral += e.unicode
+            elif e.key == pygame.K_BACKSPACE:
+                numeral = numeral[:-1]
 
     screen.blit(bg, bg_rect)
     screen.blit(cat, cat_rect)
@@ -54,4 +72,14 @@ while run:
     screen.blit(owl, owl_rect)
     screen.blit(font_box, font_rect)
     font_box.fill(SILVER)
+    font_box.blit(font.render(numeral, True, BLACK), (10, 0))
     pygame.display.update()
+<<<<<<< HEAD
+=======
+
+    if start == 1:
+        dialog('', OUTSIDE_BG, 'я загадала число')
+        dialog('', OUTSIDE_BG, 'от 0 до 100')
+        dialog('Кот, твой ход', dialog_dog_pos, 'Отгадайте его')
+        start = 0
+>>>>>>> 62fe4e7ef72f5e6f0514fbae114b04fa6b213e3f
