@@ -74,12 +74,9 @@ while run:
     font_box.fill(SILVER)
     font_box.blit(font.render(numeral, True, BLACK), (10, 0))
     pygame.display.update()
-<<<<<<< HEAD
-=======
 
     if start == 1:
         dialog('', OUTSIDE_BG, 'я загадала число')
         dialog('', OUTSIDE_BG, 'от 0 до 100')
         dialog('Кот, твой ход', dialog_dog_pos, 'Отгадайте его')
         start = 0
->>>>>>> 62fe4e7ef72f5e6f0514fbae114b04fa6b213e3f
