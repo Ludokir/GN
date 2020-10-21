@@ -27,10 +27,12 @@ font_rect = font_box.get_rect(center=(W // 2, H - font.get_height()))
 bg = pygame.image.load('Image/room.png')
 bg_rect = bg.get_rect(topleft=(0, 0))
 
-cat = pygame.image.load('Image/cat.png')
+cat = pygame.image.load('Image/морти.png')
+cat = pygame.transform.scale(cat, (cat.get_width() // 2, cat.get_height() // 2))
 cat_rect = cat.get_rect(center=(70, 220))
 
-dog = pygame.image.load('Image/dog.png')
+dog = pygame.image.load('Image/рик.png')
+dog = pygame.transform.scale(dog, (dog.get_width() // 2, dog.get_height() // 2))
 dog_rect = dog.get_rect(center=(410, 220))
 
 owl = pygame.image.load('Image/owl.png')
