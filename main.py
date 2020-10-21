@@ -43,7 +43,7 @@ dialog_dog_pos = (dog_rect.x - dialog_rect.w // 2, dog_rect.y - dialog_rect.h)
 dialog_owl_pos = (owl_rect.x, owl_rect.y - dialog_rect.h)
 
 
-def dialog(text, pos, owl_text):
+def dialogs(text, pos, owl_text):
     screen.blit(dialog, pos)
     screen.blit(font2.render(text, True, BLACK), (pos[0] + 5, pos[1] + 5))
     screen.blit(dialog, dialog_owl_pos)
@@ -76,7 +76,7 @@ while run:
     pygame.display.update()
 
     if start == 1:
-        dialog('', OUTSIDE_BG, 'я загадала число')
-        dialog('', OUTSIDE_BG, 'от 0 до 100')
-        dialog('Кот, твой ход', dialog_dog_pos, 'Отгадайте его')
+        dialogs('', OUTSIDE_BG, 'я загадала число')
+        dialogs('', OUTSIDE_BG, 'от 0 до 100')
+        dialogs('Кот, твой ход', dialog_dog_pos, 'Отгадайте его')
         start = 0
