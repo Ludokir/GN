@@ -80,3 +80,5 @@ while run:
         dialogs('', OUTSIDE_BG, 'от 0 до 100')
         dialogs('Кот, твой ход', dialog_dog_pos, 'Отгадайте его')
         start = 0
+        print('11')
+        
